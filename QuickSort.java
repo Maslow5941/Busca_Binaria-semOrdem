@@ -18,9 +18,21 @@ public class QuickSort {
 
   public static int particao(int[] vet, int inicio, int fim) {
 
-    if (inicio < fim) {
-      int aux = vet[inicio];
-    
+    int pontoCerto;
+    int topo;
+    int i;
+    pontoCerto = vet[inicio];
+    topo = inicio;
+
+    for (i = inicio +1; i <= fim; i++) {
+      if (vet[i] < pontoCerto) {
+        vet[topo] = vet[i];
+        topo++;
+      }
+    }
+    vet[topo] = pontoCerto;
+    return topo;
+
   }
 }
 
